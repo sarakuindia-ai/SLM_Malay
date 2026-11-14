@@ -29,7 +29,9 @@ Context Window (block_size): 256 tokens
 
 How to Run Inference (Workflow)
 Here is the absolute minimal production workflow setup to interact with the best custom model:
-# 1. Load Custom Tokenizer tokenizer = Tokenizer.from_file("malay_bpe_tokenizer.json") # 2. Format Input with Template prompt = "<|user|> macam mana saya nak register akaun baru <|assistant|> " input_ids = torch.tensor(tokenizer.encode(prompt).ids).unsqueeze(0).to(device) # 3. Autoregressive Generation outputs = scaled_model.generate(input_ids, max_new_tokens=100, temperature=0.7) print(tokenizer.decode(outputs[0].tolist()))
+**# 1. Load Custom Tokenizer tokenizer = Tokenizer.from_file("malay_bpe_tokenizer.json") # 
+2. Format Input with Template prompt = "<|user|> macam mana saya nak register akaun baru <|assistant|> " input_ids = torch.tensor(tokenizer.encode(prompt).ids).unsqueeze(0).to(device) # 
+3. Autoregressive Generation outputs = scaled_model.generate(input_ids, max_new_tokens=100, temperature=0.7) print(tokenizer.decode(outputs[0].tolist()))**
 
 Future Roadmap: How to Fine-Tune on More Data
 To continue scaling the capabilities of our native Malay Small Language Model:
